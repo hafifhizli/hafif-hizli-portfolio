@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+Thumbs.db
+*.log
+
+# Private files — never publish
+uploads/
+*.pdf
+*.docx
+
+# Stray / debug files
+_*.png
+TV*.mp3
+
+# Unused asset duplicates (only .webp is referenced)
+assets/izzy.jpg
+assets/izzy.png

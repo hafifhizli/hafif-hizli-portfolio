@@ -1,0 +1,13 @@
+{
+  "name": "hafif-hizli-portfolio",
+  "version": "3.0.0",
+  "description": "Hafif Hizli — bilingual portfolio (Pre-compiled JSX → JS for performance)",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

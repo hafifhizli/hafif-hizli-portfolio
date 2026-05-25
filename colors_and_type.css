@@ -1,0 +1,370 @@
+/* ============================================================
+   IZZY — Hafif Hizli Portfolio Design System
+   Dark editorial × aurora hero × one humanist sans
+   ============================================================ */
+
+/* ---------- WEBFONTS — one family, many weights ---------- */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;900&display=swap');
+
+:root {
+  /* ---------- COLOR — RAW PALETTE ---------- */
+
+  /* Paper — Sukuna bone / washi cream */
+  --paper-50:  #F2F0E2;   /* bone */
+  --paper-100: #E8E5D2;   /* default light surface */
+  --paper-200: #D8D4BD;
+  --paper-300: #B5B09A;
+  --paper-400: #847F6D;
+
+  /* Ink — Sukuna obsidian, warm-charcoal undertone, never pure #000 */
+  --ink-900:   #272420;   /* signature near-black */
+  --ink-800:   #2F2C27;
+  --ink-700:   #3A3630;
+  --ink-600:   #4A453E;
+  --ink-500:   #5A554D;
+
+  /* Crimson / Sukuna-aka — primary accent */
+  --shu-700:   #8A3232;
+  --shu-600:   #A03E3E;
+  --shu-500:   #BD4F4F;   /* PRIMARY — Sukuna crimson */
+  --shu-400:   #D06C6C;
+  --shu-300:   #E6B1A7;   /* dusty rose */
+
+  /* Aurora — Sukuna palette glow (crimson · peach · rose · steel blue) */
+  --aurora-ember:    #BD4F4F;   /* crimson ember */
+  --aurora-orange:   #E6B1A7;   /* dusty rose */
+  --aurora-amber:    #FFD3B9;   /* peach */
+  --aurora-rose:     #415F78;   /* steel blue cool accent */
+  /* legacy aliases retained so existing components keep working */
+  --aurora-violet:   var(--aurora-ember);
+  --aurora-cyan:     var(--aurora-amber);
+  --aurora-lime:     var(--aurora-orange);
+
+  /* Semantic surfaces */
+  --bg:         var(--paper-100);
+  --bg-elev:    var(--paper-50);
+  --bg-card:    var(--paper-200);
+  --bg-dark:    var(--ink-900);
+
+  --fg:         var(--ink-900);
+  --fg-muted:   var(--ink-500);
+  --fg-soft:    var(--paper-400);
+  --fg-on-dark: var(--paper-50);
+
+  --accent:        var(--shu-500);
+  --accent-hover:  var(--shu-600);
+
+  --hairline:         #2724201A;
+  --hairline-strong:  #27242033;
+  --hairline-on-dark: #F2F0E222;
+
+  /* ---------- TYPOGRAPHY — one family ---------- */
+  --font-sans: 'General Sans', 'Helvetica Neue', system-ui, sans-serif;
+  --font-jp:   'Shippori Mincho', 'Noto Serif JP', serif;  /* decorative only */
+
+  /* Scale */
+  --t-display-xl: clamp(4.5rem, 14vw, 12rem);
+  --t-display-lg: clamp(3rem, 7vw, 6rem);
+  --t-display-md: clamp(2.25rem, 4.5vw, 3.75rem);
+  --t-h1:         2.5rem;
+  --t-h2:         1.75rem;
+  --t-h3:         1.125rem;
+  --t-body-lg:    1.0625rem;
+  --t-body:       0.9375rem;
+  --t-small:      0.8125rem;
+  --t-eyebrow:    0.6875rem;
+  --t-micro:      0.625rem;
+
+  /* Tracking */
+  --tr-tightest: -0.03em;
+  --tr-tight:    -0.02em;
+  --tr-normal:    0;
+  --tr-wide:      0.06em;
+  --tr-wider:     0.18em;
+
+  /* Leading */
+  --lh-tight:    0.9;
+  --lh-snug:     1.05;
+  --lh-normal:   1.5;
+  --lh-loose:    1.65;
+
+  /* ---------- SPACING (8-pt grid) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- RADII ---------- */
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 14px;
+  --r-4: 22px;
+  --r-5: 32px;
+  --r-pill: 999px;
+
+  /* ---------- ELEVATION — Sukuna cast ---------- */
+  /* shadows carry a warm crimson undertone */
+  --shadow-1:
+    0 1px 2px rgba(39,36,32,0.10);
+  --shadow-2:
+    0 4px 10px -4px rgba(189,79,79,0.18),
+    0 10px 24px -10px rgba(39,36,32,0.24);
+  --shadow-3:
+    0 10px 22px -10px rgba(189,79,79,0.28),
+    0 28px 60px -20px rgba(39,36,32,0.36);
+  --shadow-glow-aurora:
+    0 0 80px -10px rgba(189,79,79,0.50),
+    0 0 120px -20px rgba(230,177,167,0.40),
+    0 0 90px  -20px rgba(255,211,185,0.30);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+
+  /* ---------- LAYOUT ---------- */
+  --container-max: 1280px;
+  --outer-gutter:  80px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+/* Global safety net: never allow horizontal scroll regardless of what a
+   descendant tries (absolute decorations, animated transforms, etc.).
+   Width 100% + overflow-x hidden on both html AND body is the most
+   reliable combination — body alone leaks on iOS Safari. */
+html { overflow-x: hidden; }
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.h-display-xl, .display-xl {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--t-display-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tightest);
+  text-transform: uppercase;
+}
+.h-display-lg, .display-lg {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--t-display-lg);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  text-transform: uppercase;
+}
+.h-display-md, .display-md {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--t-display-md);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tight);
+}
+
+h1, .h1 { font-weight: 700; font-size: var(--t-h1); line-height: 1.1; letter-spacing: var(--tr-tight); margin: 0; }
+h2, .h2 { font-weight: 600; font-size: var(--t-h2); line-height: 1.2; letter-spacing: -0.015em; margin: 0; }
+h3, .h3 { font-weight: 600; font-size: var(--t-h3); line-height: 1.3; margin: 0; }
+
+p, .p { font-size: var(--t-body-lg); line-height: var(--lh-loose); margin: 0; text-wrap: pretty; }
+.small { font-size: var(--t-small); font-weight: 500; }
+.micro { font-size: var(--t-micro); font-weight: 500; letter-spacing: var(--tr-wider); text-transform: uppercase; }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--t-eyebrow);
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.eyebrow .accent { color: var(--accent); }
+.eyebrow .num   { color: var(--accent); font-weight: 600; }
+
+.label-jp {
+  font-family: var(--font-jp);
+  font-weight: 700;
+}
+
+/* ============================================================
+   PRIMITIVES
+   ============================================================ */
+
+.hairline       { border-top: 1px solid var(--hairline); }
+.hairline-strong{ border-top: 1px solid var(--hairline-strong); }
+.hairline-dark  { border-top: 1px solid var(--hairline-on-dark); }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--outer-gutter);
+  padding-right: var(--outer-gutter);
+}
+@media (max-width: 1024px) { :root { --outer-gutter: 32px; } }
+@media (max-width: 640px)  { :root { --outer-gutter: 20px; } }
+
+/* Buttons */
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--t-small);
+  letter-spacing: var(--tr-wide);
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 14px 22px;
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--dur-base) var(--ease-out);
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-2);
+}
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: var(--shadow-3); }
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--ink-900);
+  padding: 13px 21px;
+}
+.btn-ghost:hover { background: var(--ink-900); color: var(--fg-on-dark); }
+.btn-on-dark {
+  background: transparent;
+  color: var(--fg-on-dark);
+  border: 1px solid var(--hairline-on-dark);
+  padding: 13px 21px;
+}
+.btn-on-dark:hover { background: var(--fg-on-dark); color: var(--ink-900); border-color: var(--fg-on-dark); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Pill / chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tr-wider);
+  text-transform: uppercase;
+  background: var(--paper-200);
+  color: var(--fg);
+}
+.chip-dark { background: var(--ink-700); color: var(--fg-on-dark); }
+.chip-accent { background: var(--accent); color: #fff; }
+
+/* Hanko seal */
+.seal {
+  width: 56px; height: 56px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--r-1);
+  display: grid; place-items: center;
+  font-family: var(--font-jp);
+  font-weight: 900;
+  font-size: 28px;
+  box-shadow: 0 2px 0 var(--shu-700), 0 6px 14px rgba(189,79,79,0.35);
+  transform: rotate(-4deg);
+  user-select: none;
+}
+
+/* Aurora backlight (hero) — driven by --aurora-* vars so the gradient
+   re-tints when the active accent palette is switched.
+   Focal point (--aurora-fx / --aurora-fy) is overridden per hero layout
+   so the glow tracks whichever element is the visual anchor:
+   centered → from the middle, split → from the side where the portrait lives. */
+.aurora {
+  --aurora-fx: 50%;
+  --aurora-fy: 60%;
+  --aurora-fx-warm: 38%;
+  --aurora-fx-cool: 62%;
+  --aurora-spread: 38%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--aurora-fx) var(--aurora-fy),                                 color-mix(in srgb, var(--aurora-ember)  55%, transparent), transparent var(--aurora-spread)),
+    radial-gradient(circle at var(--aurora-fx-warm) var(--aurora-fy),                            color-mix(in srgb, var(--aurora-orange) 42%, transparent), transparent 32%),
+    radial-gradient(circle at var(--aurora-fx-cool) calc(var(--aurora-fy) - 2%),                 color-mix(in srgb, var(--aurora-amber)  38%, transparent), transparent 34%),
+    radial-gradient(circle at var(--aurora-fx) calc(var(--aurora-fy) + 10%),                     color-mix(in srgb, var(--aurora-rose)   22%, transparent), transparent 24%);
+  filter: blur(20px);
+  animation: aurora-drift 14s var(--ease-in-out) infinite alternate;
+  transition: background 600ms var(--ease-in-out);
+}
+@keyframes aurora-drift {
+  0%   { transform: translate(0, 0) scale(1);     opacity: .95; }
+  50%  { transform: translate(2%, -1%) scale(1.04); opacity: 1; }
+  100% { transform: translate(-2%, 1%) scale(0.98); opacity: .9; }
+}
+
+/* Film grain overlay */
+.grain {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* Glitch RGB-split for hero display */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.glitch::before { color: var(--aurora-amber); animation: glitch-a 6s steps(1) infinite; }
+.glitch::after  { color: var(--aurora-rose);  animation: glitch-b 6s steps(1) infinite; }
+@keyframes glitch-a {
+  0%, 96%, 100% { transform: translate(0,0); opacity: 0; }
+  97% { transform: translate(-3px, 1px); opacity: 1; }
+  98% { transform: translate(2px, -1px); opacity: 1; }
+  99% { transform: translate(-1px, 0); opacity: 0; }
+}
+@keyframes glitch-b {
+  0%, 96%, 100% { transform: translate(0,0); opacity: 0; }
+  97% { transform: translate(3px, -1px); opacity: 1; }
+  98% { transform: translate(-2px, 1px); opacity: 1; }
+  99% { transform: translate(1px, 0); opacity: 0; }
+}
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .glitch::before, .glitch::after { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
