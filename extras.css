@@ -1374,4 +1374,99 @@ a.cert-card:hover .cert-cta { gap: 8px; }
   .music-player { max-width: 100%; }
   .music-info { min-width: 0; }
   .music-title, .music-artist { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ── Mobile font-size tuning ──────────────────────────────────
+     Desktop sizes (h1 2.5rem, h2 1.75rem, body-lg 1.0625rem) feel
+     oversized at ≤640px where line-length is already narrow. Pull
+     the scale down by ~15-20% so headings don't dominate the viewport
+     and body text breathes in fewer lines. */
+
+  /* Section heads */
+  .section-head h2 { font-size: 1.4rem !important; letter-spacing: -.01em; }
+  .section-head .eyebrow { font-size: 10px !important; letter-spacing: .18em; }
+  .section-kanji { font-size: clamp(70px, 14vw, 140px) !important; }
+
+  /* Hero name — was clamp(2.6rem, 12vw, 4rem) → tighter */
+  .hero-focal--centered .hero-name,
+  .hero-focal--split .hero-name {
+    font-size: clamp(2rem, 10vw, 2.8rem) !important;
+    letter-spacing: -.03em;
+  }
+  .hero-eyebrow { font-size: 10px !important; letter-spacing: .18em; }
+
+  /* About */
+  .about-grid .lead,
+  .layout-centered .about-grid .lead {
+    font-size: 1.05rem !important;
+    line-height: 1.45;
+  }
+  .about-body p { font-size: 0.9375rem; line-height: 1.65; }
+
+  /* Skills */
+  .skill-head .lab { font-size: 0.95rem; }
+  .skill-block li { font-size: 0.8125rem; }
+  .skill-kanji { font-size: 11px; }
+
+  /* Selected work cards */
+  .project-title { font-size: 1.25rem !important; letter-spacing: -.015em; }
+  .project-desc { font-size: 0.875rem; line-height: 1.55; }
+  .project-role { font-size: 0.75rem; }
+  .project-meta .project-num { font-size: 28px; }
+  .project-meta .project-year { font-size: 10px; }
+  .project-metrics .pm-num { font-size: 1.125rem; }
+  .project-metrics .pm-lab { font-size: 9px; }
+  .project-link { font-size: 9px; padding: 7px 12px; }
+
+  /* Experience timeline */
+  .t-body h3 { font-size: 0.95rem !important; }
+  .t-body p { font-size: 0.8125rem; line-height: 1.55; }
+  .t-year-num { font-size: 0.75rem; }
+  .t-cat { font-size: 8px; padding: 2px 7px; }
+  .t-cat-icon { width: 30px; height: 30px; }
+  .t-cat-icon svg { width: 14px; height: 14px; }
+  .t-kanji { font-size: 16px !important; }
+  .t-idx { font-size: 9px; }
+
+  /* Certifications */
+  .cert-card { padding: 14px 16px; gap: 12px; grid-template-columns: 44px 1fr; }
+  .cert-year { font-size: 16px; }
+  .cert-title { font-size: 0.875rem; }
+  .cert-issuer { font-size: 0.75rem; }
+  .cert-cta { font-size: 9px; }
+
+  /* Education card */
+  .about-edu-head { font-size: 10px; }
+  .about-edu-card { padding: 16px; }
+  .about-edu-title { font-size: 1rem; }
+  .about-edu-year { font-size: 0.75rem; }
+  .about-edu-issuer { font-size: 0.875rem; }
+  .about-edu-detail { font-size: 0.8125rem; }
+  .about-edu-summary { font-size: 0.75rem; line-height: 1.55; }
+
+  /* Contact */
+  .contact .section-head h2 { font-size: 1.4rem !important; }
+  .contact-form input,
+  .contact-form textarea { font-size: 14px !important; }
+  .contact-form label { font-size: 9px; letter-spacing: .18em; }
+  .contact-direct a,
+  .contact-direct span { font-size: 0.875rem; }
+  .contact-status { font-size: 0.8125rem; padding: 10px 12px; }
+
+  /* Footer */
+  .footer-name { font-size: 20px; }
+  .footer-col a { font-size: 0.875rem; }
+  .status { font-size: 0.75rem; }
+  .logo-name { font-size: 16px; }
+  .logo-meta { font-size: 9px; }
+
+  /* Hero sub */
+  .hero-focal--centered .hero-sub p,
+  .hero-focal--split .hero-sub p { font-size: 14px !important; line-height: 1.5; }
+
+  /* Hero bottom bar (small uppercase row) */
+  .hero-bottom-bar { font-size: 9px !important; }
+
+  /* CTAs — keep touch target but smaller text */
+  .hero-cta-row .btn { font-size: 13px; }
+  .btn-sm { font-size: 10px; }
 }

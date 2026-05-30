@@ -17,3 +17,5 @@ TV*.mp3
 # Unused asset duplicates (only .webp is referenced)
 assets/izzy.jpg
 assets/izzy.png
+
+.vercel
